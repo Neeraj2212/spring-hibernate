@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		  http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- Add properties file to config -->
+	<context:property-placeholder
+		location="classpath:source.properties" />
 
-<!-- 
-	Add a logger config to see logging messages.		
-	- For more detailed logs, set values to "FINEST"
-	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
- -->
-    <bean id="myLoggerConfig" class="com.learnspring.springdemo.MyLoggerConfig" init-method="initLogger">
-    	<property name="rootLoggerLevel" value="FINE" />
-    	<property name="printedLoggerLevel" value="FINE"/>
-    </bean>
+	<!-- Add a logger config to see logging messages. - For more detailed logs, 
+		set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
+	<bean id="myLoggerConfig"
+		class="com.learnspring.springdemo.MyLoggerConfig"
+		init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE" />
+		<property name="printedLoggerLevel" value="FINE" />
+	</bean>
 
-	<bean id="myCoach" class="com.learnspring.springdemo.CricketCoach">
-		
+	<bean id="myFortuneService"
+		class="com.learnspring.springdemo.HappyFortuneService">
+	</bean>
+
+	<bean id="myCoach" class="com.learnspring.springdemo.TrackCoach">
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+
+	<bean id="myCricketCoach"
+		class="com.learnspring.springdemo.CricketCoach">
+		<property name="fortuneService" ref="myFortuneService" />
+		<!-- Hardcoded Values to setter -->
+		<!-- <property name="emailAddress" value="patilneeraj2212@gmail.com" /> 
+			<property name="team" value="Mumbai Indians" /> -->
+
+		<!-- Reading values from properties file -->
+		<property name="emailAddress" value="${cricket.email}" />
+		<property name="team" value="${cricket.team}" />
 	</bean>
 
 
