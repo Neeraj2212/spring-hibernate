@@ -1,6 +1,7 @@
 package com.learnspring.annotations.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,6 +9,9 @@ public class TennisCoach implements Coach {
 
     // Field Injection
     @Autowired
+    @Qualifier("randomFortuneService") // Use when have multiple implementations of a interface can be used with
+                                       // constructor, setter/method or field
+
     private FortuneService fortuneService;
 
     // Constructor injection
