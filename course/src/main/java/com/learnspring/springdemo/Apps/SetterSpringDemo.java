@@ -1,6 +1,8 @@
-package com.learnspring.springdemo;
+package com.learnspring.springdemo.apps;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.learnspring.springdemo.beans.CricketCoach;
 
 public class SetterSpringDemo {
 

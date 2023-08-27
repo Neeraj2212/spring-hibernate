@@ -1,8 +1,10 @@
-package com.learnspring.springdemo;
+package com.learnspring.springdemo.apps;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class beanScopeDemo {
+import com.learnspring.springdemo.beans.Coach;
+
+public class BeanScopeDemo {
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");

@@ -11,17 +11,17 @@
 	<!-- Add a logger config to see logging messages. - For more detailed logs, 
 		set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
 	<bean id="myLoggerConfig"
-		class="com.learnspring.springdemo.MyLoggerConfig"
+		class="com.learnspring.springdemo.logger.MyLoggerConfig"
 		init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
 	</bean>
 
 	<bean id="myFortuneService"
-		class="com.learnspring.springdemo.HappyFortuneService">
+		class="com.learnspring.springdemo.beans.HappyFortuneService">
 	</bean>
 
-	<bean id="myCoach" class="com.learnspring.springdemo.TrackCoach" scope="prototype">
+	<bean id="myCoach" class="com.learnspring.springdemo.beans.TrackCoach" scope="prototype">
 		<constructor-arg ref="myFortuneService" />
 	</bean>
 
