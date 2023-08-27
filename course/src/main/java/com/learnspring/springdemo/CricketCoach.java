@@ -1,11 +1,11 @@
 package com.learnspring.springdemo;
 
 public class CricketCoach implements Coach {
-	
+
 	private FortuneService fortuneService;
 	private String emailAddress;
 	private String team;
-	
+
 	public String getEmailAddress() {
 		return emailAddress;
 	}
@@ -22,7 +22,7 @@ public class CricketCoach implements Coach {
 		this.team = team;
 	}
 
-	CricketCoach () {
+	CricketCoach() {
 		System.out.println("Inside Cricket Coach Constructor");
 	}
 
@@ -37,8 +37,7 @@ public class CricketCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return "Just Do It: " + fortuneService.getFortune() ;
+		return "Just Do It: " + fortuneService.getFortune();
 	}
 
 }
