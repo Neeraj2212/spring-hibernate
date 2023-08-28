@@ -5,16 +5,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.learnspring.annotations.SportConfig;
 import com.learnspring.annotations.beans.Coach;
 
-public class JavaConfigDemoApp {
+public class SwimJavaConfigDemoApp {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 
-        // Bean is defined in springConfig.java
-        Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
+        Coach swimCoach = context.getBean("swimCoach", Coach.class);
 
-        System.out.println(tennisCoach.getDailyWorkout());
-        System.out.println(tennisCoach.getDailyFortune());
+        System.out.println(swimCoach.getDailyWorkout());
+        System.out.println(swimCoach.getDailyFortune());
 
         context.clearResourceCaches();
         context.close();
