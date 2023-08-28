@@ -2,6 +2,7 @@ package com.learnspring.annotations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import com.learnspring.annotations.beans.Coach;
 import com.learnspring.annotations.beans.FortuneService;
@@ -11,6 +12,7 @@ import com.learnspring.annotations.beans.SwimCoach;
 @Configuration
 // @ComponentScan("com.learnspring.annotations") // Not needed while manually
 // defining beans manually
+@PropertySource("classpath:sport.properties")
 public class SportConfig {
 
     // Method name is the bean id
