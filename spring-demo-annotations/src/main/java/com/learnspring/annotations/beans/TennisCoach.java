@@ -1,10 +1,16 @@
 package com.learnspring.annotations.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+// @Scope("prototype") // New Object for each request
+@Scope("singleton") // Same Object for each request
 public class TennisCoach implements Coach {
 
     // Field Injection
@@ -46,6 +52,17 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    @PostConstruct // for init method
+    public void initMethod() {
+        System.out.println(">> TennisCoach: Inside startup function");
+    }
+
+    // does not work with scope prototype
+    @PreDestroy // for destory method
+    public void cleanupMethod() {
+        System.out.println(">> TennisCoach: Inside cleanup method");
     }
 
 }
