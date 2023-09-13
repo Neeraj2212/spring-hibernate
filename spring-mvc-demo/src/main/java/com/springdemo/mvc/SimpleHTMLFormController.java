@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/hello") // Hirarchichal mapping
 public class SimpleHTMLFormController {
 
     // Controller method to show the form

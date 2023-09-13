@@ -10,7 +10,7 @@
 <body>
     <h2>Hello World</h2>
     <hr>
-    <a href="show-form">Simple HTML Form</a>
+    <a href="hello/show-form">Simple HTML Form</a>
 </body>
 
 </html>
