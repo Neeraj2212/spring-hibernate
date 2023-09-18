@@ -11,6 +11,8 @@
     <h2>Hello World</h2>
     <hr>
     <a href="hello/show-form">Simple HTML Form</a>
+    <br>
+    <a href="student/show-form">Student Form</a>
 </body>
 
 </html>
