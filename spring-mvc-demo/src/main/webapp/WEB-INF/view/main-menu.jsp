@@ -13,6 +13,8 @@
     <a href="hello/show-form">Simple HTML Form</a>
     <br>
     <a href="student/show-form">Student Form</a>
+    <br>
+    <a href="customer/show-form">Cusotmer Form</a>
 </body>
 
 </html>
