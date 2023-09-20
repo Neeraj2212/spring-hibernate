@@ -12,6 +12,8 @@
         <body>
             <h2>The Customer is Confirmed</h2>
             <p>Welcone ${customer.firstName} ${customer.lastName} !!</p>
+            <p>Free Passes Allowed to you are ${customer.freePasses}</p>
+            <p>Your Postal Code is : ${customer.postalCode}</p>
 
         </body>
 
