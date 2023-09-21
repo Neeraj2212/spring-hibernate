@@ -14,6 +14,7 @@
             <p>Welcone ${customer.firstName} ${customer.lastName} !!</p>
             <p>Free Passes Allowed to you are ${customer.freePasses}</p>
             <p>Your Postal Code is : ${customer.postalCode}</p>
+            <p>Your Course Code is : ${customer.courseCode}</p>
 
         </body>
 
