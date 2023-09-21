@@ -22,4 +22,10 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<!-- Add Custom Error Message to the default errors-->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- Path of file is relatable to the classpath-->
+		<property name="basenames" value="messages" />
+	</bean>
+
 </beans>
