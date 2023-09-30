@@ -25,7 +25,11 @@ public class InstructorDetail {
 
     // It will check in the instructorDetail property in the instructor class to
     // get the details how it is joined
-    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "instructorDetail", cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH })
     private Instructor instructor;
 
     public InstructorDetail() {

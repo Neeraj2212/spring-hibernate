@@ -27,7 +27,7 @@ public class DeleteInstructorDetailDemo {
             session.beginTransaction();
 
             // Get the instructor detail object
-            int instructor_detail_id = 2;
+            int instructor_detail_id = 3;
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, instructor_detail_id);
 
             // Print instructor detail
@@ -40,6 +40,9 @@ public class DeleteInstructorDetailDemo {
 
             // Delete the instructor detail it will also delete the instructor
             System.out.println("Deleting instructor detail: " + instructorDetail);
+
+            // Remove the association to delete only instructor detail
+            instructorDetail.getInstructor().setInstructorDetail(null);
             session.delete(instructorDetail);
 
             // Commit Transaction
